@@ -1,6 +1,6 @@
 services:
   clash:
-    image: ghcr.io/Endmoying/mihomo-docker:main
+    image: ghcr.io/endmoying/mihomo-docker:main
     # build: .
     container_name: clash
     restart: always

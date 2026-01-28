@@ -21,4 +21,4 @@ RUN mkdir /geox && \
     curl -o /geox/GeoLite2-ASN.mmdb -L https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
 RUN apk add python3 py3-yaml
 ENTRYPOINT ["/entrypoint.sh"]
-CMD [ "-d", "/root/.config/clash", "-ext-ui", "/dashboard" ]
+CMD [ "-d", "/root/.config/clash" ]
