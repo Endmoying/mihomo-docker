@@ -2,6 +2,7 @@ import os
 import yaml
 
 ConfigPath = os.getenv("CONFIG_PATH")
+print(ConfigPath)
 AllowFields = {
     "IPV6": {"name": "ipv6", "type": bool},
     "MIXED_PORT": {"name": "mixed-port", "type": int},
