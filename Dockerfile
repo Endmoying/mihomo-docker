@@ -1,7 +1,7 @@
 FROM metacubex/mihomo:latest
 RUN apk add --no-cache curl unzip && \
     # use https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
-    curl -o /gh-pages.zip -L https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip && unzip /gh-pages.zip -d / && mv /metacubexd-gh-pages /dashboard && \
+    curl -o /gh-pages.zip -L https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip && unzip /gh-pages.zip -d / && mv /metacubexd-gh-pages /root/.config/clash/dashboard && \
     # use clash-dashboard but it is deleted
     # curl -o /gh-pages.zip -L https://raw.githubusercontent.com/darknightlab/clash-docker/main/clash-dashboard.zip && unzip /gh-pages.zip -d / && \
     # use yacd
