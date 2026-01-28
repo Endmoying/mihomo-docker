@@ -5,7 +5,8 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-RUN mkdir /geox && \
+RUN apk add --no-cache curl && \
+    mkdir /geox && \
     curl -o /geox/geoip.dat -L https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat && \
     curl -o /geox/geosite.dat -L https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat && \
     curl -o /geox/country.mmdb -L https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb && \
