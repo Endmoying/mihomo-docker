@@ -1,7 +1,7 @@
 FROM metacubex/mihomo:latest
 RUN apk add --no-cache curl unzip && \
     # use https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
-    curl -o /gh-pages.zip -L https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip && unzip /gh-pages.zip -d / && mv /metacubexd-gh-pages /root/.config/clash/dashboard && \
+    curl -o /gh-pages.zip -L https://github.com/MetaCubeX/metacubexd/archive/gh-pages.zip && unzip /gh-pages.zip -d / && mv /metacubexd-gh-pages /dashboard && \
     # use clash-dashboard but it is deleted
     # curl -o /gh-pages.zip -L https://raw.githubusercontent.com/darknightlab/clash-docker/main/clash-dashboard.zip && unzip /gh-pages.zip -d / && \
     # use yacd
@@ -21,4 +21,4 @@ RUN mkdir /geox && \
     curl -o /geox/GeoLite2-ASN.mmdb -L https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
 RUN apk add python3 py3-yaml
 ENTRYPOINT ["/entrypoint.sh"]
-CMD [ "-d", "/root/.config/clash" ]
+CMD [ "-d", "/root/.config/clash", "-ext-ui", "/dashboard"]
